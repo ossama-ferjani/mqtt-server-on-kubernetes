@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: mosquitto-config
+  # Change if you want to deploy to somewhere other then default
+  namespace: test
+  labels:
+    app: mosquitto
+data:
+  mosquitto.conf: |
+    # Config file for mosquitto
+    listener 1883
+    allow_anonymous false
+    password_file /config/passwords
+    persistence false
+    log_dest stdout
+  passwords: |
+    # Passwords file
+    test:$6$WgoRASWRnPePPq4Q$Q6g58x1Gf2mcoC/H1hOlm3Zml2dPyKGhqrmtU8fjjLr1/20Ddi+lm46zp4fqO+wgquXp8QHJLq/gW54h+KU7dw==
+
