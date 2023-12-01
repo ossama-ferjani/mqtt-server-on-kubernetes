@@ -2,7 +2,7 @@ apiVersion: v1
 kind: ConfigMap
 metadata:
   name: mosquitto-config
-  # Change if you want to deploy to somewhere other then default
+  
   namespace: test
   labels:
     app: mosquitto
